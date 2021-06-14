@@ -1,31 +1,35 @@
 import java.util.Scanner;
-public class JavaProject1 {    
-   public static float hesapla(float a,float e,float d,float m,float p){
+public class JavaProject1 {
+   private static final float ARMUT_KILO_FIYAT = 2.14;
+   private static final float ELMA_KILO_FIYAT = 3.67;
+   private static final float DOMATES_KILO_FIYAT = 1.11;
+   private static final float MUZ_KILO_FIYAT = 0.95;
+   private static final float PATLICAN_KILO_FIYAT = 5.00;
+   public static float hesapla(float kiloArmut, float kiloElma, float kiloDomates, float kiloMuz, float kiloPatlican){
        float toplam = 0;
-       float armut = (float) (a*2.14);
-       float elma = (float) (e*3.67);
-       float domates = (float) (d*1.11);
-       float muz = (float) (m*0.95);
-       float patlican = (float) (p*5.00);
-       toplam = armut+elma+domates+muz+patlican;
+       toplam += (float) (kiloArmut * ARMUT_KILO_FIYAT);
+       toplam += (float) (kiloElma * ELMA_KILO_FIYAT);
+       toplam += (float) (kiloDomates * DOMATES_KILO_FIYAT);
+       toplam += (float) (kiloMuz * MUZ_KILO_FIYAT);
+       toplam += (float) (kiloPatlican * PATLICAN_KILO_FIYAT);
        return toplam;
    }
 
     
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        float a,e,d,m,p;
+        float kiloArmut, kiloElma, kiloDomates, kiloMuz, kiloPatlican;
         System.out.print("Armut kac kilo: ");
-        a = sc.nextFloat();
+        kiloArmut = sc.nextFloat();
         System.out.print("Elma kac kilo: ");
-        e = sc.nextFloat();
+        kiloElma = sc.nextFloat();
         System.out.print("Domates kac kilo: ");
-        d = sc.nextFloat();
+        kiloDomates = sc.nextFloat();
         System.out.print("Muz kac kilo: ");
-        m = sc.nextFloat();
+        kiloMuz = sc.nextFloat();
         System.out.print("Patlıcan kac kilo: ");
-        p = sc.nextFloat();
-        System.out.print("Toplam Tutar: "+hesapla(a, e, d, m, p));
+        kiloPatlican = sc.nextFloat();
+        System.out.print("Toplam Tutar: "+hesapla(kiloArmut, kiloElma, kiloDomates, kiloMuz, kiloPatlican));
     }
     
 }
